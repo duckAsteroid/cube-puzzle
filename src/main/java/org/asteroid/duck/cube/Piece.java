@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents one of the pieces in the cube puzzle
+ * Represents one of the 2D pieces in the cube puzzle
  */
 public class Piece {
     private Block[][] layout;
@@ -46,7 +46,10 @@ public class Piece {
         String[] blockNames = line.split(",");
         List<Block> result = new ArrayList<>(blockNames.length);
         for(int i=0; i < blockNames.length; i++) {
-            result.add(Block.parse(blockNames[i].trim().charAt(0)));
+            String name = blockNames[i].trim();
+            if (name.length() > 0) {
+                result.add(Block.parse(name.charAt(0)));
+            }
         }
         return result.toArray(new Block[result.size()]);
     }

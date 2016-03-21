@@ -11,10 +11,6 @@ import static org.junit.Assert.*;
  */
 public class PieceTest {
 
-    @Test
-    public void parse() throws Exception {
-
-    }
 
     @Test
     public void parseLine() throws Exception {
@@ -26,6 +22,6 @@ public class PieceTest {
         blocks = Piece.parseLine(",B,W");
         assertArrayEquals(new Block[]{BLACK, WHITE}, blocks);
         blocks = Piece.parseLine(", ,");
-        assertArrayEquals(new Block[]{null}, blocks);
+        assertArrayEquals(new Block[0], blocks);
     }
 }
